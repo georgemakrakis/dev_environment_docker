@@ -1,3 +1,4 @@
+# File taken and modified from https://www.w3schools.com/python/python_mysql_select.asp
 import os
 import mysql.connector
 from dotenv import load_dotenv
