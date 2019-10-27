@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  db:
+    image: mysql
+    container_name: my_db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      my_network:
+  application:
+    build:
+      context: ./project
+    container_name: my_app
+    networks:
+      my_network:
+networks:
+  my_network:
+volumes:
+  db_data:
