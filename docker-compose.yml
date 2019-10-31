@@ -15,7 +15,7 @@ services:
       my_network:
   application:
     build:
-      context: ./project
+      context: ./app
     container_name: my_app
     ports:
       - "8000:8000"
